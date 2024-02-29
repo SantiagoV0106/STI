@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Button } from './components'
-import './App.css'
 
 function App() {
 
