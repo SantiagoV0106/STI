@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Button } from './components'
+import { LobbyPage } from './pages/LobbyPage/LobbyPage'
 
 function App() {
 
@@ -52,7 +53,7 @@ function App() {
 
   return (
     <>
-      <h1>
+      {/* <h1>
         Trivia Api Test
       </h1>
 
@@ -127,7 +128,8 @@ function App() {
         hasQuestion ? <h1>
           Hola
         </h1> : ''
-      }
+      } */}
+      <LobbyPage />
     </>
   )
 }
