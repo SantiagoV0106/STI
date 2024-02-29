@@ -1,29 +1,9 @@
-import { useState } from 'react'
+import { usePlayers } from '../../hooks/usePlayers'
 import '../LobbyPage/LobbyPage.css'
-import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 export function LobbyPage() {
-    const [players, setPlayers] = useState([])
-    const [query, setQuery] = useState('')
 
-    const handleInput = ({ target }) => {
-        setQuery(target.value)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const playerClass = {
-            id: crypto.randomUUID(),
-            name: query
-        }
-        setPlayers([...players, playerClass])
-        setQuery('')
-    }
-
-    const hasPlayers = players.length > 0
-
-    useEffect(() => {
-        console.log(players);
-    }, [players])
+    const { handleSubmit, handleInput, query, hasPlayers, players } = usePlayers()
     return (
         <>
             <h1>Space Quest</h1>
@@ -46,7 +26,9 @@ export function LobbyPage() {
                         }) : <p>Add players to start!</p>
                 }
             </ul>
-            <button>Start game</button>
+            <Link to='/question-type'>
+                <button>Start game</button>
+            </Link>
         </>
     )
 }

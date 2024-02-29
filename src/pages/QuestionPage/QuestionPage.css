@@ -1,0 +1,7 @@
+.question-types{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    margin: 0 auto;
+    place-items: center;
+    height: 70vh;
+}
