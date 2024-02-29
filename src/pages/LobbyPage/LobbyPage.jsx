@@ -26,7 +26,7 @@ export function LobbyPage() {
                         }) : <p>Add players to start!</p>
                 }
             </ul>
-            <Link to='/question-type'>
+            <Link to='/turn'>
                 <button>Start game</button>
             </Link>
         </>

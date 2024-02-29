@@ -6,6 +6,19 @@ import { useEffect } from "react";
 export function PlayersContextProvider({ children }) {
     const [players, setPlayers] = useState([])
     const [query, setQuery] = useState('')
+    const [playerTurn, setPlayerTurn] = useState(0)
+    const playerName = players[playerTurn]?.name
+
+    const changePlayerTurn = () => {
+        if (playerTurn === players.length - 1) {
+            setPlayerTurn(0)
+        }
+        else {
+            setPlayerTurn((prevState) => {
+                return prevState + 1
+            })
+        }
+    }
 
     const handleInput = ({ target }) => {
         setQuery(target.value)
@@ -32,7 +45,9 @@ export function PlayersContextProvider({ children }) {
             handleSubmit,
             hasPlayers,
             query,
-            players
+            players,
+            playerName,
+            changePlayerTurn
         }}>
             {children}
         </PlayersContext.Provider>

@@ -13,7 +13,9 @@ export function usePlayers() {
         handleSubmit,
         hasPlayers,
         query,
-        players
+        players,
+        playerName,
+        changePlayerTurn
     } = playersContext
 
     return {
@@ -21,6 +23,8 @@ export function usePlayers() {
         handleSubmit,
         hasPlayers,
         query,
-        players
+        players,
+        playerName,
+        changePlayerTurn
     }
 }
