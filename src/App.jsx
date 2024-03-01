@@ -16,8 +16,9 @@ function App() {
             element={<TurnPage />} />
           <Route path='/question-type'
             element={<QuestionPage />} />
+          {/* <Route path='/trivia'
+            element={<TriviaPage />} /> */}
         </Routes>
-        {/* <TriviaPage /> */}
       </BrowserRouter>
     </>
   )
