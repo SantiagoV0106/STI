@@ -9,6 +9,7 @@ export function PlayersContextProvider({ children }) {
     const [playerTurn, setPlayerTurn] = useState(0)
     const playerName = players[playerTurn]?.name
 
+
     const changePlayerTurn = () => {
         if (playerTurn === players.length - 1) {
             setPlayerTurn(0)
@@ -39,6 +40,10 @@ export function PlayersContextProvider({ children }) {
     useEffect(() => {
         console.log(players);
     }, [players])
+
+
+   
+
     return (
         <PlayersContext.Provider value={{
             handleInput,

@@ -4,6 +4,7 @@ import { TriviaPage } from './pages/TriviaPage/TriviaPage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { TurnPage } from './pages/TurnPage/TurnPage'
 
+
 function App() {
 
   return (
@@ -16,8 +17,8 @@ function App() {
             element={<TurnPage />} />
           <Route path='/question-type'
             element={<QuestionPage />} />
-          {/* <Route path='/trivia'
-            element={<TriviaPage />} /> */}
+          <Route path='/trivia'
+            element={<TriviaPage />} />
         </Routes>
       </BrowserRouter>
     </>

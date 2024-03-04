@@ -2,7 +2,7 @@ import { Html5QrcodeScanner } from "html5-qrcode"
 import { useState, useEffect } from "react"
 import { Question } from "../../components/Question/Question"
 
-export function TriviaPage() {
+export function ScannerPage() {
 
     const [scanResult, setScannResult] = useState(null)
 

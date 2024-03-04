@@ -6,7 +6,7 @@ export function QuestionPage() {
         <>
             <h1 style={{ margin: '0 auto', width: 'max-content' }}>Space Quest</h1>
             <section className='question-types'>
-                <Link to='/turn'>
+                <Link to='/trivia'>
                     <p>Individual</p>
                 </Link>
                 <p>Duel</p>
