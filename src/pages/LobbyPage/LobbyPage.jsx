@@ -7,7 +7,7 @@ export function LobbyPage() {
     return (
         <>
             <section className='lobby-container'>
-                <img src="/logo.svg" alt="Space Quest Logo" />
+                <img src="/logo.svg" alt="Space Quest Logo"/>
 
                 <form onSubmit={handleSubmit} className='lobby-form'>
                     <fieldset className='add-players'>

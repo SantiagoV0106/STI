@@ -4,7 +4,7 @@ import '../QuestionPage/QuestionPage.css'
 export function QuestionPage() {
     return (
         <>
-            <img src="/logo.svg" alt="Space Quest Logo" />
+            <img src="/logo.svg" alt="Space Quest Logo" className='logo' />
             <section className='question-types'>
                 {
                     triviaOptions.map(({id, label, color}) => {

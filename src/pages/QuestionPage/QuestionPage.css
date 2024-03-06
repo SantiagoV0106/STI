@@ -1,13 +1,18 @@
 .question-types{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     margin: 0 auto;
     place-items: center;
-    height: 70vh;
+    height: 100%;
     color: white;
     font-size: 2rem;
     padding: 1.5rem;
     gap: 2rem;
+}
+
+.logo {
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .question-types>a{
@@ -21,8 +26,8 @@
     justify-content: center;
     border: 1px solid white;
     border-radius: 1rem;
+    padding: 2rem;
 }
-
 
 .red {
     color: #CF2424;
