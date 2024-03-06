@@ -12,12 +12,29 @@ export function Question({url}) {
         return <p>Fail to get question</p>
     }
 
+    if (data) {
+        console.log(data);
+    }
+
     return (
         <>
             {
                 data.map((question) => {
                     return(
+                        <>
                         <p key={question.id}> {question.question} </p>
+                        <ul>
+                            <li>{question.correctAnswer}</li>
+                            {
+                                question.incorrectAnswers.map((item,index)=> {
+                                    return(
+                                    <li key={index}> {item} </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                        </>
+                        
                     )
                 })
             }
