@@ -54,7 +54,8 @@ export function Question({ url }) {
                             <ul>
                                 {
                                     sortedOptions.map((item, i) => <li
-                                        className={selectedAnswer === item && item === question.correctAnswer ? 'correct' : ''}
+                                        className={
+                                            selectedAnswer === item ? item === question.correctAnswer ? 'correct' : 'incorrect' : ''}
                                         key={i}
                                         style={itemStyle}
                                         onClick={() => handleSelect(item)
