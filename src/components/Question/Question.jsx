@@ -1,8 +1,34 @@
 /* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react'
 import { useFetch } from "../../hooks/useFetch"
-export function Question({url}) {
 
+export function Question({ url }) {
     const { data, loading, error } = useFetch(url)
+    const [sortedOptions, setSortedOptions] = useState([])
+    const [selectedAnswer, setSelectedAnswer] = useState(null)
+    const [isCorrect, setIsCorrect] = useState(null)
+
+    const itemStyle = {
+        cursor: "pointer",
+        margin: '0 0 20px'
+    }
+
+    useEffect(() => {
+
+        if (data) {
+            const allOptions = [data[0].correctAnswer, ...data[0].incorrectAnswers]
+            const sortedAnswers = allOptions.sort(() => Math.random() - 0.5)
+            console.log(sortedAnswers);
+            setSortedOptions(sortedAnswers)
+        }
+
+    }, [data])
+
+    const handleSelect = (selectedOption) => {
+        setSelectedAnswer(selectedOption)
+        setIsCorrect(selectedOption === data[0].correctAnswer)
+        console.log(isCorrect);
+    }
 
     if (loading) {
         return <p>Get ready</p>
@@ -14,27 +40,31 @@ export function Question({url}) {
 
     if (data) {
         console.log(data);
+        console.log(data[0].incorrectAnswers);
+
     }
 
     return (
         <>
             {
                 data.map((question) => {
-                    return(
+                    return (
                         <>
-                        <p key={question.id}> {question.question} </p>
-                        <ul>
-                            <li>{question.correctAnswer}</li>
-                            {
-                                question.incorrectAnswers.map((item,index)=> {
-                                    return(
-                                    <li key={index}> {item} </li>
-                                    )
-                                })
-                            }
-                        </ul>
+                            <p key={question.id}> {question.question} </p>
+                            <ul>
+                                {
+                                    sortedOptions.map((item, i) => <li
+                                        key={i}
+                                        style={itemStyle}
+                                        onClick={() => handleSelect(item)} > {item} </li>)
+                                }
+                            </ul>
+
+                            {selectedAnswer && (
+                                <p>{isCorrect ? '¡Correcto!' : 'Incorrecto, intenta de nuevo.'}</p>
+                            )}
                         </>
-                        
+
                     )
                 })
             }
