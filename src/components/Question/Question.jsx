@@ -1,12 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react'
 import { useFetch } from "../../hooks/useFetch"
+import { useNavigate } from 'react-router'
 
 export function Question({ url }) {
     const { data, loading, error } = useFetch(url)
     const [sortedOptions, setSortedOptions] = useState([])
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [isCorrect, setIsCorrect] = useState(null)
+
+    const navigate = useNavigate()
 
     const itemStyle = {
         cursor: "pointer",
@@ -22,12 +25,20 @@ export function Question({ url }) {
             setSortedOptions(sortedAnswers)
         }
 
+
     }, [data])
 
     const handleSelect = (selectedOption) => {
         setSelectedAnswer(selectedOption)
         setIsCorrect(selectedOption === data[0].correctAnswer)
         console.log(isCorrect);
+
+        if (selectedOption === data[0].correctAnswer) {
+            setTimeout(() => {
+                navigate('/turn')
+            }, 1000);
+        }
+
     }
 
     if (loading) {
@@ -58,7 +69,9 @@ export function Question({ url }) {
                                             selectedAnswer === item ? item === question.correctAnswer ? 'correct' : 'incorrect' : ''}
                                         key={i}
                                         style={itemStyle}
-                                        onClick={() => handleSelect(item)
+                                        onClick={
+                                            () => handleSelect(item)
+
                                         } > {item} </li>)
                                 }
                             </ul>
