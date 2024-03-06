@@ -61,7 +61,7 @@ export function Question({ url }) {
                             </ul>
 
                             {selectedAnswer && (
-                                <p>{isCorrect ? '¡Correcto!' : 'Incorrecto, intenta de nuevo.'}</p>
+                                <p>{isCorrect ? '¡Correcto!' : 'Incorrecto, intenta de nuevo holaaaaa.'}</p>
                             )}
                         </>
 
