@@ -30,9 +30,12 @@ export function LobbyPage() {
                             }) : <p className='start-msg'>Add players to start!</p>
                     }
                 </ul>
-                <Link to='/turn'>
-                    <button className='start-btn'>Start game</button>
-                </Link>
+                <section className='btn-group'>
+                    <Link to='/turn'>
+                        <button className='start-btn'>Start game</button>
+                    </Link>
+                    <a href="https://landing-space-quest.vercel.app/" className='landing-page' target='_blank'>How to play?</a>
+                </section>
             </section>
         </>
     )

@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import { usePlayers } from "../../hooks/usePlayers";
+import './TurnPage.css'
 
 export function TurnPage() {
     const { playerName, changePlayerTurn } = usePlayers()
 
     return (
         <>
-            <h1>Is {playerName} turn!</h1>
-            <p onClick={changePlayerTurn}>
+            <article className="turn-article">
+                <img src="/earth.svg" alt="Earth image" className="turn-image" />
+                <h1 className="turn-msg">Is <span style={{color: 'white'}}>{playerName}</span> turn!</h1>
                 <Link to='/question-type'>
-                    Continue
+                    <p onClick={changePlayerTurn} className="continue">
+                        Continue
+                    </p>
                 </Link>
-            </p>
+            </article>
         </>
     )
 }
