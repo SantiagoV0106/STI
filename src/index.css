@@ -1,9 +1,9 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@import url(https://fonts.googleapis.com/css?family=Alumni+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #0B112A;
+  font-family: "Alumni Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }

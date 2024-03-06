@@ -6,29 +6,34 @@ export function LobbyPage() {
     const { handleSubmit, handleInput, query, hasPlayers, players } = usePlayers()
     return (
         <>
-            <h1>Space Quest</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="player"
-                    id="player"
-                    placeholder='Enter player name'
-                    onChange={handleInput}
-                    value={query} />
-                <button
-                    type="submit">Add player</button>
-            </form>
-            <ul>
-                {
-                    hasPlayers ?
-                        players.map(({ id, name }) => {
-                            return <li key={id}>{name}</li>
-                        }) : <p>Add players to start!</p>
-                }
-            </ul>
-            <Link to='/turn'>
-                <button>Start game</button>
-            </Link>
+            <section className='lobby-container'>
+                <img src="/logo.svg" alt="" />
+
+                <form onSubmit={handleSubmit} className='lobby-form'>
+                    <fieldset className='add-players'>
+                        <input
+                            type="text"
+                            name="player"
+                            id="player"
+                            placeholder='Enter player name'
+                            onChange={handleInput}
+                            value={query} />
+                        <button
+                            type="submit">Add</button>
+                    </fieldset>
+                </form>
+                <ul className='players-list'>
+                    {
+                        hasPlayers ?
+                            players.map(({ id, name }) => {
+                                return <li key={id}>{name}</li>
+                            }) : <p className='start-msg'>Add players to start!</p>
+                    }
+                </ul>
+                <Link to='/turn'>
+                    <button className='start-btn'>Start game</button>
+                </Link>
+            </section>
         </>
     )
 }

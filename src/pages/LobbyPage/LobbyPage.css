@@ -1,0 +1,78 @@
+.lobby-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin-top: 1rem;
+}
+
+
+.lobby-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.add-players{
+    border: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.add-players>input {
+    padding: 8px 12px;
+    border-radius: 1rem;
+    border: 1px solid #90AFFF;
+    width: 100%;
+    color: white;
+}
+.add-players>button {
+    padding: 8px 12px;
+    border-radius: 1rem;
+    border: 1px solid #90AFFF;
+    color: white;
+    font-family: "Alumni Sans", sans-serif;
+    font-size: 1.5rem;
+    background-color: #90AFFF;
+}
+
+
+.players-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100%;
+    padding-inline: 1rem;
+    gap: 2rem;
+}
+
+.players-list>li {
+    list-style: none;
+    font-size: 2rem;
+    padding: 4px 8px;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+.start-btn{
+    width: 100%;
+    margin: 0 auto;
+    background-color: #90AFFF;
+    padding: 10px 8px;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.start-msg {
+    color: white;
+    font-size: 2rem;
+    margin: auto;
+}
