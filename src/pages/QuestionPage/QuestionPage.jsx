@@ -4,16 +4,41 @@ import '../QuestionPage/QuestionPage.css'
 export function QuestionPage() {
     return (
         <>
-            <h1 style={{ margin: '0 auto', width: 'max-content' }}>Space Quest</h1>
+            <img src="/logo.svg" alt="Space Quest Logo" />
             <section className='question-types'>
-                <Link to='/trivia'>
-                    <p>Individual</p>
-                </Link>
-                <p>Duel</p>
-                <p>Aliance</p>
-                <p>Everyone</p>
+                {
+                    triviaOptions.map(({id, label, color}) => {
+                        return <Link to='/trivia' key={id}>
+                        <p className={`options ${color}`}>{label}</p>
+                    </Link>
+                    })
+                }
+                
             </section>
         </>
 
     )
 }
+
+const triviaOptions = [
+    {
+        id: 1,
+        label: 'Individual',
+        color: 'blue'
+    },
+    {
+        id: 2,
+        label: 'Duel',
+        color: 'yellow'
+    },
+    {
+        id: 3,
+        label: 'Aliance',
+        color: 'green'
+    },
+    {
+        id: 4,
+        label: 'Everyone',
+        color: 'red'
+    },
+]
