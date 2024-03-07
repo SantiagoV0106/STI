@@ -9,9 +9,15 @@ export function QuestionPage() {
                 <Link to='/trivia'>
                     <p>Individual</p>
                 </Link>
-                <p>Duel</p>
-                <p>Aliance</p>
-                <p>Everyone</p>
+                <Link to={'/duel'}>
+                    <p>Duel</p>
+                </Link>
+                <Link to={'/aliance'}>
+                    <p>Aliance</p>
+                </Link>
+                <Link to={'/everyone'}>
+                    <p>Everyone</p>
+                </Link>
             </section>
         </>
 

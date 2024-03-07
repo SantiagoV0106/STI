@@ -8,12 +8,13 @@ export function Question({ url }) {
     const [sortedOptions, setSortedOptions] = useState([])
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [isCorrect, setIsCorrect] = useState(null)
+    const [moves, setMoves] = useState(0)
 
     const navigate = useNavigate()
 
     const itemStyle = {
         cursor: "pointer",
-        margin: '0 0 20px'
+        margin: '0 0 20px',
     }
 
     useEffect(() => {
@@ -23,26 +24,34 @@ export function Question({ url }) {
             const sortedAnswers = allOptions.sort(() => Math.random() - 0.5)
             console.log(sortedAnswers);
             setSortedOptions(sortedAnswers)
+
         }
 
 
     }, [data])
 
     const handleSelect = (selectedOption) => {
+
         setSelectedAnswer(selectedOption)
         setIsCorrect(selectedOption === data[0].correctAnswer)
         console.log(isCorrect);
 
-        if (selectedOption === data[0].correctAnswer) {
+        const difficulty = data[0].difficulty.toLowerCase()
+        const moveAmout = isCorrect
+            ? difficulty === 'easy' ? 2 : difficulty === 'medium' ? 3 : 5
+            : difficulty === 'easy' ? 0 : difficulty === 'medium' ? 1 : 3
+        setMoves(moveAmout)
+
+        if (selectedOption) {
             setTimeout(() => {
                 navigate('/turn')
-            }, 1000);
+            }, 5000);
         }
 
     }
 
     if (loading) {
-        return <p>Get ready</p>
+        return <p>Get ready!</p>
     }
 
     if (error) {
@@ -55,15 +64,19 @@ export function Question({ url }) {
 
     }
 
+    const hasOptions = sortedOptions.length > 0
+
     return (
         <>
             {
                 data.map((question) => {
                     return (
                         <>
-                            <p key={question.id}> {question.question} </p>
+                            <h1> It`s a {question.difficulty} question </h1>
+                            <h2 key={question.id}> {question.question} </h2>
                             <ul>
-                                {
+                                {hasOptions ?
+
                                     sortedOptions.map((item, i) => <li
                                         className={
                                             selectedAnswer === item ? item === question.correctAnswer ? 'correct' : 'incorrect' : ''}
@@ -73,11 +86,18 @@ export function Question({ url }) {
                                             () => handleSelect(item)
 
                                         } > {item} </li>)
+                                    :
+                                    <p>Wating for options</p>
                                 }
                             </ul>
 
                             {selectedAnswer && (
-                                <p>{isCorrect ? '¡Correcto!' : 'Incorrecto, intenta de nuevo.'}</p>
+                                <p>
+                                    {isCorrect ? `Correct! You can move ${moves} ${moves === 1 ? 'Square' : 'Squares'} `
+                                        : `Incorrect! Go back ${moves} ${moves === 1 ? 'Square' : 'Squares'} `}
+                                    <br />
+                                    Correct answer : {question.correctAnswer}
+                                </p>
                             )}
                         </>
 
