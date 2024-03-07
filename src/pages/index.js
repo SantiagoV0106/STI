@@ -1,0 +1,7 @@
+export * from './AliancePage/AliancePage'
+export * from './DuelPage/DuelPage'
+export * from './LobbyPage/LobbyPage'
+export * from './QuestionPage/QuestionPage'
+export * from './TriviaPage/TriviaPage'
+export * from './TurnPage/TurnPage'
+export * from './EveryonePage/EveryonePage'

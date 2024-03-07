@@ -1,8 +1,18 @@
-import { LobbyPage } from './pages/LobbyPage/LobbyPage'
-import { QuestionPage } from './pages/QuestionPage/QuestionPage'
-import { TriviaPage } from './pages/TriviaPage/TriviaPage'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { TurnPage } from './pages/TurnPage/TurnPage'
+import {
+  LobbyPage,
+  TurnPage,
+  QuestionPage,
+  TriviaPage,
+  DuelPage,
+  AliancePage,
+  EveryonePage
+} from './pages'
+
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from 'react-router-dom'
 
 
 function App() {
@@ -19,6 +29,12 @@ function App() {
             element={<QuestionPage />} />
           <Route path='/trivia'
             element={<TriviaPage />} />
+          <Route path='/duel'
+            element={<DuelPage />} />
+          <Route path='/aliance'
+            element={<AliancePage />} />
+          <Route path='/everyone'
+            element={<EveryonePage />} />
         </Routes>
       </BrowserRouter>
     </>
