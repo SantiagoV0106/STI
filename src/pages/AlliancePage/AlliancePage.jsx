@@ -3,7 +3,7 @@ import { Button } from "../../components/Button/Button";
 
 import './aliancepage.css'
 
-export function AliancePage() {
+export function AlliancePage() {
 
     const navigate = useNavigate()
 
