@@ -1,4 +1,4 @@
-export * from './AliancePage/AliancePage'
+export * from './AlliancePage/AlliancePage'
 export * from './DuelPage/DuelPage'
 export * from './LobbyPage/LobbyPage'
 export * from './QuestionPage/QuestionPage'

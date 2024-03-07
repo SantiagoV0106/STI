@@ -1,0 +1,55 @@
+.q-type, .question, .answers-section, .correct-answer {
+    color: white;
+}
+
+.question-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.q-type {
+    font-size: 1.2rem;
+}
+
+.question {
+    width: 85%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #768AEE;
+    font-size: 1.7rem;
+}
+
+.answers-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.answers-section>li {
+    list-style: none;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 1rem;
+}
+
+.correct-answer{
+    font-size: 1.3rem;
+}
+
+.correct-answer>span{
+    color: #768AEE;
+}
+
+.get-ready {
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+}

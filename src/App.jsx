@@ -4,7 +4,6 @@ import {
   QuestionPage,
   TriviaPage,
   DuelPage,
-  AliancePage,
   EveryonePage
 } from './pages'
 
@@ -13,6 +12,7 @@ import {
   Route,
   Routes
 } from 'react-router-dom'
+import { AlliancePage } from './pages/AlliancePage/AlliancePage'
 
 
 function App() {
@@ -31,8 +31,8 @@ function App() {
             element={<TriviaPage />} />
           <Route path='/duel'
             element={<DuelPage />} />
-          <Route path='/aliance'
-            element={<AliancePage />} />
+          <Route path='/alliance'
+            element={<AlliancePage />} />
           <Route path='/everyone'
             element={<EveryonePage />} />
         </Routes>
