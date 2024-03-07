@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useFetch } from "../../hooks/useFetch"
 import { useNavigate } from 'react-router'
+import './Question.css'
 
 export function Question({ url }) {
     const { data, loading, error } = useFetch(url)
@@ -51,30 +52,27 @@ export function Question({ url }) {
     }
 
     if (loading) {
-        return <p>Get ready!</p>
+        return <p className='get-ready'>Get ready!</p>
     }
 
     if (error) {
         return <p>Fail to get question</p>
     }
 
-    if (data) {
-        console.log(data);
-        console.log(data[0].incorrectAnswers);
-
-    }
 
     const hasOptions = sortedOptions.length > 0
 
+
     return (
-        <>
+        <section className='question-section'>
+            <img src="/logo.svg" alt="Space Quest Logo" className='logo' />
             {
                 data.map((question) => {
                     return (
                         <>
-                            <h1> It`s a {question.difficulty} question </h1>
-                            <h2 key={question.id}> {question.question} </h2>
-                            <ul>
+                            <h1 className='q-type'> It`s a {question.difficulty} question </h1>
+                            <h2 key={question.id} className='question'> {question.question} </h2>
+                            <ul className='answers-section'>
                                 {hasOptions ?
 
                                     sortedOptions.map((item, i) => <li
@@ -87,16 +85,20 @@ export function Question({ url }) {
 
                                         } > {item} </li>)
                                     :
-                                    <p>Wating for options</p>
+                                    <p>Waiting for options</p>
                                 }
                             </ul>
 
                             {selectedAnswer && (
-                                <p>
+                                <p className='correct-answer'>
                                     {isCorrect ? `Correct! You can move ${moves} ${moves === 1 ? 'Square' : 'Squares'} `
                                         : `Incorrect! Go back ${moves} ${moves === 1 ? 'Square' : 'Squares'} `}
                                     <br />
-                                    Correct answer : {question.correctAnswer}
+                                    <span>
+                                        {
+                                            isCorrect ? '' : `Correct answer : ${question.correctAnswer}`
+                                        }
+                                    </span>
                                 </p>
                             )}
                         </>
@@ -104,7 +106,7 @@ export function Question({ url }) {
                     )
                 })
             }
-        </>
+        </section>
     )
 
 }

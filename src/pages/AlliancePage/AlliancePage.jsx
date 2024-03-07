@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import { Button } from "../../components/Button/Button";
 
-import './aliancepage.css'
+import './alliancepage.css'
 
 export function AlliancePage() {
 
@@ -12,16 +12,18 @@ export function AlliancePage() {
     }
 
     return (
-        <>
-            <h1>Get ready to make an aliance</h1>
-            <h2>Choose any player you want to play with</h2>
-            <p> <b>Remember</b> work together, answer right the question and move foward DIFINIR CUANTO squares each </p>
+        <section className="page-section">
+            <img src="/logo.svg" alt="Space Quest Logo" className="logo"/>
+            <h1 className="page-title">Get ready to make an aliance</h1>
+            <h2 className="page-subtitle">Choose any player you want to play with</h2>
+            <p className="page-content"> <b>Remember</b> work together, answer right the question and move foward DIFINIR CUANTO squares each </p>
             <Button 
             type={'button'}
             click={handleNavigate}
             label={'Let`s Go'}
             disabled={false}
              />
-        </>
+        </section>
     )
+
 }
