@@ -12,6 +12,7 @@ import {
   Route,
   Routes
 } from 'react-router-dom'
+
 import { AlliancePage } from './pages/AlliancePage/AlliancePage'
 
 

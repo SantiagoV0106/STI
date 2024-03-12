@@ -17,9 +17,12 @@ export function TriviaPage() {
                 height: 300
             },
             fps: 5,
+            facingMode: 'environment'
         })
 
         scanner.render(success, error)
+
+        scanner.start()
 
         function success(result) {
             scanner.clear()
@@ -31,8 +34,6 @@ export function TriviaPage() {
             console.error(err);
 
         }
-
-
 
     }, [])
 
