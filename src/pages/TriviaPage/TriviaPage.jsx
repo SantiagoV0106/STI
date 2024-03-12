@@ -1,7 +1,7 @@
 import { Html5QrcodeScanner } from "html5-qrcode"
 import { useState, useEffect } from "react"
 import { Question } from "../../components/Question/Question"
-import './TriviaPage.css'
+import './triviapage.css'
 
 export function TriviaPage() {
 
@@ -21,8 +21,6 @@ export function TriviaPage() {
         })
 
         scanner.render(success, error)
-
-        scanner.start()
 
         function success(result) {
             scanner.clear()
