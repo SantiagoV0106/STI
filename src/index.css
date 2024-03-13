@@ -4,6 +4,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #0B112A;
   font-family: "Alumni Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #0B112A;
 }
