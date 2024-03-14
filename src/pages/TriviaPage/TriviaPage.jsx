@@ -1,7 +1,7 @@
 import { Html5QrcodeScanner } from "html5-qrcode"
 import { useState, useEffect } from "react"
 import { Question } from "../../components/Question/Question"
-import './triviapage.css'
+import './TriviaPage.css'
 
 export function TriviaPage() {
 
