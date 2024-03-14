@@ -15,7 +15,8 @@ export function usePlayers() {
         query,
         players,
         playerName,
-        changePlayerTurn
+        changePlayerTurn,
+        deletePlayer
     } = playersContext
 
     return {
@@ -25,6 +26,7 @@ export function usePlayers() {
         query,
         players,
         playerName,
-        changePlayerTurn
+        changePlayerTurn,
+        deletePlayer
     }
 }

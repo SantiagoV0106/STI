@@ -25,6 +25,11 @@ export function PlayersContextProvider({ children }) {
         setQuery(target.value)
     }
 
+    const deletePlayer = (id) => {
+        const newPlayers = players.filter((item) => item.id !== id)
+        setPlayers(newPlayers)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const playerClass = {
@@ -52,7 +57,8 @@ export function PlayersContextProvider({ children }) {
             query,
             players,
             playerName,
-            changePlayerTurn
+            changePlayerTurn,
+            deletePlayer
         }}>
             {children}
         </PlayersContext.Provider>

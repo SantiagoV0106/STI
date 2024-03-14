@@ -29,8 +29,8 @@
     border-radius: 1rem;
     border: 1px solid #90AFFF;
     width: 100%;
-    color: white;
     font-size: 1.5rem;
+
 }
 
 .add-players>button {
@@ -57,6 +57,9 @@
     font-size: 2rem;
     padding: 1px;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .start-btn {

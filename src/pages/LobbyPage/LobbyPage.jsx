@@ -1,9 +1,12 @@
+
 import { usePlayers } from '../../hooks/usePlayers'
 import '../LobbyPage/LobbyPage.css'
 import { Link } from 'react-router-dom'
 export function LobbyPage() {
 
-    const { handleSubmit, handleInput, query, hasPlayers, players } = usePlayers()
+    const { handleSubmit, handleInput, query, hasPlayers, players, deletePlayer } = usePlayers()
+
+
     return (
         <>
             <section className='lobby-container'>
@@ -17,7 +20,8 @@ export function LobbyPage() {
                             id="player"
                             placeholder='Enter player name'
                             onChange={handleInput}
-                            value={query} />
+                            value={query}
+                            />
                         <button
                             type="submit">Add</button>
                     </fieldset>
@@ -26,7 +30,7 @@ export function LobbyPage() {
                     {
                         hasPlayers ?
                             players.map(({ id, name }) => {
-                                return <li key={id}>{name}</li>
+                                return <li key={id}>{name} <img src="/delete.svg" alt="Delete icon" onClick={() => deletePlayer(id)} /></li>
                             }) : <p className='start-msg'>Add players to start!</p>
                     }
                 </ul>
