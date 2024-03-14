@@ -53,3 +53,11 @@
     text-align: center;
     height: 100vh;
 }
+
+.correct {
+    background-color: #00BE16;
+}
+
+.incorrect {
+    background-color: #CB0F0F;
+}

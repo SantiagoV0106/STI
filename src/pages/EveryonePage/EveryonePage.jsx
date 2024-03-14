@@ -16,8 +16,8 @@ export function EveryonePage() {
             <img src="/logo.svg" alt="Space Quest Logo" className="logo" />
             <h1 className="page-title">Get ready</h1>
             <h2 className="page-subtitle">All players are going to play together</h2>
-            <p className="page-content"> <b>Remember</b> Work as a team,
-                answer wrong and everyone go back CASILLAS POR RETROCEDER squares, get it right and move DEFINIR CASILLAS squares </p>
+            <p className="page-content"> <b>Remember</b> work as a team,
+                answer wrong and everyone go back 3 squares, get it right and move 5 squares </p>
             <Button
                 type={'button'}
                 click={handleNavigate}

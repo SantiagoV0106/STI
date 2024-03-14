@@ -13,8 +13,8 @@ export function DuelPage() {
         <section className="page-section">
             <img src="/logo.svg" alt="Space Quest Logo" className="logo" />
             <h1 className="page-title">Get ready for the duel</h1>
-            <h2 className="page-subtitle">Choose any player you want to play agianst</h2>
-            <p className="page-content"> <b>Remember</b> if you win, the other player has move back ... debemos definir esto, por ahora no se </p>
+            <h2 className="page-subtitle">Choose any player you want to play against</h2>
+            <p className="page-content"> <b>Remember</b> if you win, the other player has to move back 1 squares, and you advance 3 squares </p>
             <Button
                 type={'button'}
                 click={handleNavigate}
