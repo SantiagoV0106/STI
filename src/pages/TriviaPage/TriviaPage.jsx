@@ -14,7 +14,7 @@ export function TriviaPage() {
                 width: 300,
                 height: 300
             },
-            fps: 10,
+            fps: 60,
             facingMode: 'environment'
         })
 
