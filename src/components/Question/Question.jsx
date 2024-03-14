@@ -91,8 +91,6 @@ export function Question({ url }) {
 
                             {selectedAnswer && (
                                 <p className='correct-answer'>
-                                    {isCorrect ? `Correct! You can move ${moves} ${moves === 1 ? 'Square' : 'Squares'} `
-                                        : `Incorrect! Go back ${moves} ${moves === 1 ? 'Square' : 'Squares'} `}
                                     <br />
                                     <span>
                                         {
